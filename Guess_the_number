@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <script>
+            const Min = 1;
+const Max = 100;
+const Ans = Math.floor(Math.random() * (Max - Min + 1)) + Min;
+
+let attempt = 0;
+let guess;
+let run = true;
+
+while (run) {
+    guess = prompt(`Guess the number between ${Min} - ${Max}\t`);
+    guess = Number(guess);
+
+    if (guess < Min || guess > Max || isNaN(guess)) {
+        alert("Please enter a valid number.");
+    } 
+else {
+        attempt++;
+        
+        if (guess < Ans) {
+            alert("Too low!!");
+        }
+ else if (guess > Ans) {
+            alert("Too high!!");
+        }
+ else {
+            alert(`You win! It took you ${attempt} attempts to win.`);
+            run = false;
+        }
+    }
+}
+        </script>
+    </body>
+</html>
